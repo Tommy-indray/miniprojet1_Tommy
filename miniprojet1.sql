@@ -113,22 +113,166 @@ INSERT INTO Succursales (nom, adresse, telephone) VALUES
 ('Bibliothèque des Lettres', '789 Boulevard Voltaire, Marseille', '04 98 76 54 32')
 ON CONFLICT DO NOTHING;  -- Évite les erreurs si déjà inséré
 
--- Insertion de 50 ouvrages variés (extrait représentatif)
--- Commentaire : Sélection d'ouvrages classiques et contemporains
+-- Insertion de 50 ouvrages variés (liste complète)
 INSERT INTO Ouvrages (ISBN, titre, auteurs, editeur, annee_publication, categorie, nombre_exemplaires) VALUES
 ('978-2-07-036002-8', 'Le Petit Prince', 'Antoine de Saint-Exupéry', 'Gallimard', 1943, 'Littérature', 5),
 ('978-2-253-00501-5', '1984', 'George Orwell', 'Folio', 1949, 'Science-Fiction', 3),
 ('978-2-07-040081-6', 'L''Étranger', 'Albert Camus', 'Gallimard', 1942, 'Littérature', 4),
--- ... (45 autres ouvrages variés) ...
+('978-2-07-036822-2', 'Madame Bovary', 'Gustave Flaubert', 'Gallimard', 1857, 'Littérature', 3),
+('978-2-07-041311-3', 'Les Misérables', 'Victor Hugo', 'Gallimard', 1862, 'Littérature', 6),
+('978-2-221-09515-5', 'Vingt mille lieues sous les mers', 'Jules Verne', 'Pocket', 1870, 'Science-Fiction', 4),
+('978-2-253-00430-8', 'Le Meilleur des mondes', 'Aldous Huxley', 'Folio', 1932, 'Science-Fiction', 3),
+('978-2-07-036394-4', 'À la recherche du temps perdu', 'Marcel Proust', 'Gallimard', 1913, 'Littérature', 2),
+('978-2-07-037010-2', 'L''Écume des jours', 'Boris Vian', 'Gallimard', 1947, 'Littérature', 3),
+('978-2-266-11101-1', 'Le Parfum', 'Patrick Süskind', 'Le Livre de Poche', 1985, 'Roman', 4),
+('978-2-226-01029-9', 'La Peste', 'Albert Camus', 'Gallimard', 1947, 'Littérature', 4),
+('978-2-253-00144-4', 'Fahrenheit 451', 'Ray Bradbury', 'Folio', 1953, 'Science-Fiction', 3),
+('978-2-253-00567-1', 'Dune', 'Frank Herbert', 'Folio', 1965, 'Science-Fiction', 5),
+('978-2-070-36102-8', 'Les Fleurs du mal', 'Charles Baudelaire', 'Gallimard', 1857, 'Poésie', 2),
+('978-2-08-070414-8', 'Le Horla', 'Guy de Maupassant', 'Flammarion', 1887, 'Nouvelle', 3),
+('978-2-253-00571-8', 'Fondation', 'Isaac Asimov', 'Folio', 1951, 'Science-Fiction', 4),
+('978-2-080-70950-8', 'L''Alchimiste', 'Paulo Coelho', 'Flammarion', 1988, 'Roman', 5),
+('978-2-253-00531-2', 'Les Robots', 'Isaac Asimov', 'Folio', 1950, 'Science-Fiction', 3),
+('978-2-253-00548-0', 'Ubik', 'Philip K. Dick', 'Folio', 1969, 'Science-Fiction', 3),
+('978-2-07-036295-4', 'Les Trois Mousquetaires', 'Alexandre Dumas', 'Gallimard', 1844, 'Roman', 4),
+('978-2-253-00538-1', 'Chroniques martiennes', 'Ray Bradbury', 'Folio', 1950, 'Science-Fiction', 3),
+('978-2-07-041726-5', 'Bel-Ami', 'Guy de Maupassant', 'Gallimard', 1885, 'Littérature', 3),
+('978-2-253-00562-6', 'La Guerre des mondes', 'H.G. Wells', 'Folio', 1898, 'Science-Fiction', 3),
+('978-2-07-036294-7', 'Germinal', 'Émile Zola', 'Gallimard', 1885, 'Littérature', 4),
+('978-2-253-00532-9', 'Les androïdes rêvent-ils de moutons électriques?', 'Philip K. Dick', 'Folio', 1968, 'Science-Fiction', 3),
+('978-2-07-036298-5', 'Le Comte de Monte-Cristo', 'Alexandre Dumas', 'Gallimard', 1844, 'Roman', 5),
+('978-2-253-00552-7', 'La Nuit des temps', 'René Barjavel', 'Folio', 1968, 'Science-Fiction', 4),
+('978-2-07-037295-6', 'Le Vieil Homme et la Mer', 'Ernest Hemingway', 'Gallimard', 1952, 'Littérature', 3),
+('978-2-253-00541-1', 'La Planète des singes', 'Pierre Boulle', 'Folio', 1963, 'Science-Fiction', 3),
+('978-2-07-036037-0', 'Candide', 'Voltaire', 'Gallimard', 1759, 'Philosophie', 3),
+('978-2-266-01380-9', 'Le Nom de la rose', 'Umberto Eco', 'Le Livre de Poche', 1980, 'Roman', 4),
+('978-2-253-00557-2', 'Ravage', 'René Barjavel', 'Folio', 1943, 'Science-Fiction', 3),
+('978-2-07-040804-1', 'Les Raisins de la colère', 'John Steinbeck', 'Gallimard', 1939, 'Littérature', 3),
+('978-2-253-00537-4', 'Le Maître du Haut Château', 'Philip K. Dick', 'Folio', 1962, 'Science-Fiction', 3),
+('978-2-07-036851-2', 'L''Assommoir', 'Émile Zola', 'Gallimard', 1877, 'Littérature', 3),
+('978-2-266-01700-5', 'Le Liseur', 'Bernhard Schlink', 'Le Livre de Poche', 1995, 'Roman', 4),
+('978-2-253-00554-1', 'Les Dépossédés', 'Ursula K. Le Guin', 'Folio', 1974, 'Science-Fiction', 3),
+('978-2-07-036028-8', 'Les Contemplations', 'Victor Hugo', 'Gallimard', 1856, 'Poésie', 2),
+('978-2-253-00560-2', 'Le Monde des Ā', 'A. E. van Vogt', 'Folio', 1945, 'Science-Fiction', 3),
+('978-2-07-040806-5', 'Pour qui sonne le glas', 'Ernest Hemingway', 'Gallimard', 1940, 'Littérature', 3),
+('978-2-266-11156-1', 'La Carte et le Territoire', 'Michel Houellebecq', 'J''ai Lu', 2010, 'Roman', 4),
+('978-2-253-00550-3', 'Les Enfants de la terre', 'Jean M. Auel', 'Folio', 1980, 'Préhistoire', 4),
+('978-2-07-036826-0', 'Nana', 'Émile Zola', 'Gallimard', 1880, 'Littérature', 3),
+('978-2-253-00555-8', 'Le Château des étoiles', 'José Luis G. Delgado', 'Folio', 1998, 'Science-Fiction', 3),
+('978-2-07-040808-9', 'Le Soleil se lève aussi', 'Ernest Hemingway', 'Gallimard', 1926, 'Littérature', 3),
+('978-2-266-11189-9', 'Les Particules élémentaires', 'Michel Houellebecq', 'J''ai Lu', 1998, 'Roman', 4),
+('978-2-253-00559-6', 'La Horde du Contrevent', 'Alain Damasio', 'Folio', 2004, 'Fantasy', 5),
+('978-2-07-037299-4', 'Au-dessous du volcan', 'Malcolm Lowry', 'Gallimard', 1947, 'Littérature', 3),
+('978-2-253-00561-9', 'La Possibilité d''une île', 'Michel Houellebecq', 'J''ai Lu', 2005, 'Roman', 4),
 ('978-2-02-028153-5', 'Le Seigneur des Anneaux', 'J.R.R. Tolkien', 'Bourgois', 1954, 'Fantasy', 4)
 ON CONFLICT (ISBN) DO NOTHING;
 
 -- Insertion de 100 exemplaires répartis
--- Commentaire : Distribution réaliste entre succursales et états
 INSERT INTO Exemplaires (ISBN, succursale_id, numero_unique, etat) VALUES
+-- Succursale 1 (Bibliothèque Centrale)
 ('978-2-07-036002-8', 1, 'EX-001', 'disponible'),
 ('978-2-07-036002-8', 1, 'EX-002', 'emprunté'),
--- ... (98 autres exemplaires) ...
+('978-2-253-00501-5', 1, 'EX-003', 'disponible'),
+('978-2-07-040081-6', 1, 'EX-004', 'disponible'),
+('978-2-07-036822-2', 1, 'EX-005', 'en réparation'),
+('978-2-07-041311-3', 1, 'EX-006', 'disponible'),
+('978-2-221-09515-5', 1, 'EX-007', 'emprunté'),
+('978-2-253-00430-8', 1, 'EX-008', 'disponible'),
+('978-2-07-036394-4', 1, 'EX-009', 'disponible'),
+('978-2-07-037010-2', 1, 'EX-010', 'emprunté'),
+('978-2-266-11101-1', 1, 'EX-011', 'disponible'),
+('978-2-226-01029-9', 1, 'EX-012', 'disponible'),
+('978-2-253-00144-4', 1, 'EX-013', 'emprunté'),
+('978-2-253-00567-1', 1, 'EX-014', 'disponible'),
+('978-2-070-36102-8', 1, 'EX-015', 'disponible'),
+('978-2-08-070414-8', 1, 'EX-016', 'en réparation'),
+('978-2-253-00571-8', 1, 'EX-017', 'disponible'),
+('978-2-080-70950-8', 1, 'EX-018', 'emprunté'),
+('978-2-253-00531-2', 1, 'EX-019', 'disponible'),
+('978-2-253-00548-0', 1, 'EX-020', 'disponible'),
+('978-2-07-036295-4', 1, 'EX-021', 'emprunté'),
+('978-2-253-00538-1', 1, 'EX-022', 'disponible'),
+('978-2-07-041726-5', 1, 'EX-023', 'disponible'),
+('978-2-253-00562-6', 1, 'EX-024', 'emprunté'),
+('978-2-07-036294-7', 1, 'EX-025', 'disponible'),
+('978-2-253-00532-9', 1, 'EX-026', 'disponible'),
+('978-2-07-036298-5', 1, 'EX-027', 'emprunté'),
+('978-2-253-00552-7', 1, 'EX-028', 'disponible'),
+('978-2-07-037295-6', 1, 'EX-029', 'disponible'),
+('978-2-253-00541-1', 1, 'EX-030', 'disponible'),
+
+-- Succursale 2 (Bibliothèque des Sciences)
+('978-2-07-036037-0', 2, 'EX-031', 'disponible'),
+('978-2-266-01380-9', 2, 'EX-032', 'emprunté'),
+('978-2-253-00557-2', 2, 'EX-033', 'disponible'),
+('978-2-07-040804-1', 2, 'EX-034', 'disponible'),
+('978-2-253-00537-4', 2, 'EX-035', 'emprunté'),
+('978-2-07-036851-2', 2, 'EX-036', 'disponible'),
+('978-2-266-01700-5', 2, 'EX-037', 'disponible'),
+('978-2-253-00554-1', 2, 'EX-038', 'emprunté'),
+('978-2-07-036028-8', 2, 'EX-039', 'disponible'),
+('978-2-253-00560-2', 2, 'EX-040', 'disponible'),
+('978-2-07-040806-5', 2, 'EX-041', 'emprunté'),
+('978-2-266-11156-1', 2, 'EX-042', 'disponible'),
+('978-2-253-00550-3', 2, 'EX-043', 'disponible'),
+('978-2-07-036826-0', 2, 'EX-044', 'emprunté'),
+('978-2-253-00555-8', 2, 'EX-045', 'disponible'),
+('978-2-07-040808-9', 2, 'EX-046', 'disponible'),
+('978-2-266-11189-9', 2, 'EX-047', 'emprunté'),
+('978-2-253-00559-6', 2, 'EX-048', 'disponible'),
+('978-2-07-037299-4', 2, 'EX-049', 'disponible'),
+('978-2-253-00561-9', 2, 'EX-050', 'emprunté'),
+('978-2-02-028153-5', 2, 'EX-051', 'disponible'),
+('978-2-253-00501-5', 2, 'EX-052', 'disponible'),
+('978-2-07-040081-6', 2, 'EX-053', 'emprunté'),
+('978-2-07-036822-2', 2, 'EX-054', 'disponible'),
+('978-2-07-041311-3', 2, 'EX-055', 'disponible'),
+('978-2-221-09515-5', 2, 'EX-056', 'en réparation'),
+('978-2-253-00430-8', 2, 'EX-057', 'disponible'),
+('978-2-07-036394-4', 2, 'EX-058', 'emprunté'),
+('978-2-07-037010-2', 2, 'EX-059', 'disponible'),
+('978-2-266-11101-1', 2, 'EX-060', 'disponible'),
+
+-- Succursale 3 (Bibliothèque des Lettres)
+('978-2-226-01029-9', 3, 'EX-061', 'emprunté'),
+('978-2-253-00144-4', 3, 'EX-062', 'disponible'),
+('978-2-253-00567-1', 3, 'EX-063', 'disponible'),
+('978-2-070-36102-8', 3, 'EX-064', 'emprunté'),
+('978-2-08-070414-8', 3, 'EX-065', 'disponible'),
+('978-2-253-00571-8', 3, 'EX-066', 'disponible'),
+('978-2-080-70950-8', 3, 'EX-067', 'emprunté'),
+('978-2-253-00531-2', 3, 'EX-068', 'disponible'),
+('978-2-253-00548-0', 3, 'EX-069', 'disponible'),
+('978-2-07-036295-4', 3, 'EX-070', 'en réparation'),
+('978-2-253-00538-1', 3, 'EX-071', 'disponible'),
+('978-2-07-041726-5', 3, 'EX-072', 'emprunté'),
+('978-2-253-00562-6', 3, 'EX-073', 'disponible'),
+('978-2-07-036294-7', 3, 'EX-074', 'disponible'),
+('978-2-253-00532-9', 3, 'EX-075', 'emprunté'),
+('978-2-07-036298-5', 3, 'EX-076', 'disponible'),
+('978-2-253-00552-7', 3, 'EX-077', 'disponible'),
+('978-2-07-037295-6', 3, 'EX-078', 'emprunté'),
+('978-2-253-00541-1', 3, 'EX-079', 'disponible'),
+('978-2-07-036037-0', 3, 'EX-080', 'disponible'),
+('978-2-266-01380-9', 3, 'EX-081', 'emprunté'),
+('978-2-253-00557-2', 3, 'EX-082', 'disponible'),
+('978-2-07-040804-1', 3, 'EX-083', 'disponible'),
+('978-2-253-00537-4', 3, 'EX-084', 'en réparation'),
+('978-2-07-036851-2', 3, 'EX-085', 'disponible'),
+('978-2-266-01700-5', 3, 'EX-086', 'emprunté'),
+('978-2-253-00554-1', 3, 'EX-087', 'disponible'),
+('978-2-07-036028-8', 3, 'EX-088', 'disponible'),
+('978-2-253-00560-2', 3, 'EX-089', 'emprunté'),
+('978-2-07-040806-5', 3, 'EX-090', 'disponible'),
+('978-2-266-11156-1', 3, 'EX-091', 'disponible'),
+('978-2-253-00550-3', 3, 'EX-092', 'emprunté'),
+('978-2-07-036826-0', 3, 'EX-093', 'disponible'),
+('978-2-253-00555-8', 3, 'EX-094', 'disponible'),
+('978-2-07-040808-9', 3, 'EX-095', 'en réparation'),
+('978-2-266-11189-9', 3, 'EX-096', 'disponible'),
+('978-2-253-00559-6', 3, 'EX-097', 'emprunté'),
+('978-2-07-037299-4', 3, 'EX-098', 'disponible'),
+('978-2-253-00561-9', 3, 'EX-099', 'disponible'),
 ('978-2-02-028153-5', 3, 'EX-100', 'emprunté')
 ON CONFLICT (numero_unique) DO NOTHING;
 
@@ -136,16 +280,93 @@ ON CONFLICT (numero_unique) DO NOTHING;
 INSERT INTO Utilisateurs (nom, prenom, type, email, date_inscription) VALUES
 ('Dupont', 'Jean', 'étudiant', 'jean.dupont@email.com', '2024-01-15'),
 ('Martin', 'Marie', 'professeur', 'marie.martin@email.com', '2023-09-10'),
--- ... (28 autres utilisateurs) ...
+('Bernard', 'Pierre', 'étudiant', 'pierre.bernard@email.com', '2024-02-10'),
+('Thomas', 'Julie', 'personnel', 'julie.thomas@email.com', '2023-11-05'),
+('Petit', 'Luc', 'étudiant', 'luc.petit@email.com', '2024-03-12'),
+('Robert', 'Sophie', 'professeur', 'sophie.robert@email.com', '2023-08-20'),
+('Richard', 'Thomas', 'étudiant', 'thomas.richard@email.com', '2024-01-30'),
+('Durand', 'Claire', 'personnel', 'claire.durand@email.com', '2023-10-15'),
+('Dubois', 'Marc', 'étudiant', 'marc.dubois@email.com', '2024-02-25'),
+('Moreau', 'Isabelle', 'professeur', 'isabelle.moreau@email.com', '2023-07-18'),
+('Laurent', 'Nicolas', 'étudiant', 'nicolas.laurent@email.com', '2024-03-05'),
+('Simon', 'Catherine', 'personnel', 'catherine.simon@email.com', '2023-12-10'),
+('Michel', 'François', 'étudiant', 'francois.michel@email.com', '2024-01-20'),
+('Lefebvre', 'Valérie', 'professeur', 'valerie.lefebvre@email.com', '2023-09-25'),
+('Leroy', 'Philippe', 'étudiant', 'philippe.leroy@email.com', '2024-02-15'),
+('Roux', 'Anne-Marie', 'personnel', 'annemarie.roux@email.com', '2023-11-30'),
+('David', 'Patrick', 'étudiant', 'patrick.david@email.com', '2024-03-08'),
+('Bertrand', 'Élise', 'professeur', 'elise.bertrand@email.com', '2023-08-05'),
+('Morel', 'Jacques', 'étudiant', 'jacques.morel@email.com', '2024-01-10'),
+('Fournier', 'Hélène', 'personnel', 'helene.fournier@email.com', '2023-10-28'),
+('Girard', 'Sébastien', 'étudiant', 'sebastien.girard@email.com', '2024-02-28'),
+('Bonnet', 'Christine', 'professeur', 'christine.bonnet@email.com', '2023-07-12'),
+('Dupuis', 'Rémy', 'étudiant', 'remy.dupuis@email.com', '2024-03-15'),
+('Lambert', 'Patricia', 'personnel', 'patricia.lambert@email.com', '2023-12-05'),
+('Fontaine', 'Guillaume', 'étudiant', 'guillaume.fontaine@email.com', '2024-01-25'),
+('Rousseau', 'Monique', 'professeur', 'monique.rousseau@email.com', '2023-09-15'),
+('Vincent', 'Alexandre', 'étudiant', 'alexandre.vincent@email.com', '2024-02-05'),
+('Muller', 'Dominique', 'personnel', 'dominique.muller@email.com', '2023-11-20'),
+('Lefevre', 'Thierry', 'étudiant', 'thierry.lefevre@email.com', '2024-03-18'),
 ('Roche', 'Anne', 'étudiant', 'anne.roche@email.com', '2024-02-20')
 ON CONFLICT (email) DO NOTHING;
 
 -- Emprunts de test pour différentes situations
 INSERT INTO Emprunts (utilisateur_id, exemplaire_id, date_emprunt, date_retour_prevue, date_retour_effective) VALUES
-(1, 2, '2024-12-01', '2024-12-15', NULL),   -- Emprunt en cours
-(2, 11, '2024-12-05', '2024-12-19', NULL),  -- Emprunt en cours
-(7, 39, '2024-11-25', '2024-12-09', '2024-12-10'),  -- Emprunt retourné à temps
-(20, 4, '2024-11-20', '2024-12-04', '2024-12-05')   -- Emprunt retourné avec 1 jour de retard
+-- Emprunts en cours
+(1, 2, '2024-12-01', '2024-12-15', NULL),
+(2, 11, '2024-12-05', '2024-12-19', NULL),
+(3, 7, '2024-12-03', '2024-12-17', NULL),
+(5, 13, '2024-12-02', '2024-12-16', NULL),
+(7, 21, '2024-12-04', '2024-12-18', NULL),
+(9, 27, '2024-12-06', '2024-12-20', NULL),
+(12, 35, '2024-12-01', '2024-12-15', NULL),
+(15, 41, '2024-12-05', '2024-12-19', NULL),
+(18, 53, '2024-12-03', '2024-12-17', NULL),
+(22, 61, '2024-12-02', '2024-12-16', NULL),
+
+-- Emprunts retournés à temps
+(4, 39, '2024-11-25', '2024-12-09', '2024-12-09'),
+(6, 45, '2024-11-28', '2024-12-12', '2024-12-11'),
+(8, 52, '2024-11-30', '2024-12-14', '2024-12-13'),
+(10, 58, '2024-11-27', '2024-12-11', '2024-12-10'),
+(13, 66, '2024-11-29', '2024-12-13', '2024-12-12'),
+
+-- Emprunts retournés en retard (générant des pénalités)
+(11, 20, '2024-11-15', '2024-11-29', '2024-12-02'),
+(14, 30, '2024-11-18', '2024-12-02', '2024-12-05'),
+(16, 40, '2024-11-20', '2024-12-04', '2024-12-07'),
+(17, 50, '2024-11-22', '2024-12-06', '2024-12-09'),
+(20, 4, '2024-11-20', '2024-12-04', '2024-12-05'),
+
+-- Emprunts historiques
+(19, 8, '2024-10-10', '2024-10-24', '2024-10-23'),
+(21, 16, '2024-10-15', '2024-10-29', '2024-10-28'),
+(23, 24, '2024-10-20', '2024-11-03', '2024-11-02'),
+(25, 32, '2024-10-25', '2024-11-08', '2024-11-07'),
+(27, 48, '2024-10-30', '2024-11-13', '2024-11-12')
+ON CONFLICT DO NOTHING;
+
+-- Insertion de réservations
+INSERT INTO Reservations (utilisateur_id, ISBN, date_reservation, statut) VALUES
+(1, '978-2-253-00501-5', '2024-12-01', 'en attente'),
+(3, '978-2-07-040081-6', '2024-12-02', 'notifié'),
+(5, '978-2-07-036822-2', '2024-12-03', 'en attente'),
+(7, '978-2-07-041311-3', '2024-12-01', 'annulé'),
+(9, '978-2-221-09515-5', '2024-12-04', 'en attente'),
+(11, '978-2-253-00430-8', '2024-12-02', 'notifié'),
+(13, '978-2-07-036394-4', '2024-12-05', 'en attente'),
+(15, '978-2-07-037010-2', '2024-12-03', 'en attente'),
+(17, '978-2-266-11101-1', '2024-12-04', 'annulé'),
+(19, '978-2-226-01029-9', '2024-12-06', 'en attente')
+ON CONFLICT DO NOTHING;
+
+-- Insertion de pénalités
+INSERT INTO Penalites (utilisateur_id, montant, motif, paye) VALUES
+(11, 1.50, 'Retard de 3 jours sur l''emprunt #16', FALSE),
+(14, 1.50, 'Retard de 3 jours sur l''emprunt #17', TRUE),
+(16, 1.50, 'Retard de 3 jours sur l''emprunt #18', FALSE),
+(17, 1.50, 'Retard de 3 jours sur l''emprunt #19', TRUE),
+(20, 0.50, 'Retard de 1 jour sur l''emprunt #20', FALSE)
 ON CONFLICT DO NOTHING;
 
 -- -----------------------------------------------------
