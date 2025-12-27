@@ -10,8 +10,7 @@ Implémentation SQL complète d'un système de gestion de bibliothèque universi
 
 ## 🚀 Installation
 1. Créer une base PostgreSQL : `CREATE DATABASE bibliotheque;`
-2. Exécuter le script : `psql -d bibliotheque -f miniprojet1.sql`
-3. Vérifier : `SELECT COUNT(*) FROM ouvrages;` (doit retourner 50)
+2. Exécuter le script
 
 ## 📊 Contenu du projet
 - 7 tables relationnelles avec contraintes d'intégrité
