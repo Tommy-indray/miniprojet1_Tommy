@@ -7,6 +7,7 @@ Implémentation SQL complète d'un système de gestion de bibliothèque universi
 ## 📁 Fichiers
 - `miniprojet1.sql` - Script SQL complet (création, données, requêtes, procédures, triggers)
 - `reflexionIA.docx` - Réflexion sur l'intégration IA/PostgreSQL pour le système
+- `diagram1.pdf` - diagramme des tables
 
 ## 🚀 Installation
 1. Créer une base PostgreSQL : `CREATE DATABASE bibliotheque;`
